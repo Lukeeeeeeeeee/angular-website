@@ -20,4 +20,4 @@ heroes教程
 动态组件
 
 # ng-attribute-directive
-属性型指令
+属性型指令1

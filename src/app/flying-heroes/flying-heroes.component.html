@@ -1,0 +1,24 @@
+<p>
+    New hero:
+    <input type="text" #box
+        (keyup.enter)="addHero(box.value); box.value=''"
+        placeholder="hero.name">
+    <input type="checkbox" [(ngModel)]="canFly">can fly
+</p>
+
+<input type="checkbox" [(ngModel)]="mutate">Mutate Array
+<button (click)="reset()">
+    重置
+</button>
+
+<h2>会飞的英雄</h2>
+<div *ngFor="let hero of (heroes | flyingHeroes)">
+    {{hero.name}}
+</div>
+
+<h2>所有英雄</h2>
+<div>
+    <div *ngFor="let hero of heroes">
+        {{hero.name}}
+    </div>
+</div>

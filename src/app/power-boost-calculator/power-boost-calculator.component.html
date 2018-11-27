@@ -1,0 +1,6 @@
+<h2>能力倍增计算器</h2>
+<div>正常功率: <input type="text" [(ngModel)]="power"></div>
+<div>倍增功率：<input type="text" [(ngModel)]="factor"></div>
+<p>
+    Super Hero Power: {{power | exponentialStrength: factor}}
+</p>

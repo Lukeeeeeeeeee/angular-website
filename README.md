@@ -18,3 +18,9 @@ heroes教程
 
 # ng-attribute-directive
 属性型指令
+
+# ng-stuctural-directive
+结构型指令
+
+# ng-pipes
+管道

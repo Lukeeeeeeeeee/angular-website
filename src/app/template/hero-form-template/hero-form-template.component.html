@@ -1,0 +1,122 @@
+<div class="container">
+    <h1>Template-Driven Form</h1>
+
+    <form #heroForm="ngForm" appIdentityRevealed>
+        <div [hidden]="heroForm.submitted">
+            <div
+                class="cross-validation"
+                [class.cross-validation-error]="
+                    heroForm.errors?.identityRevealed &&
+                    (heroForm.touched || heroForm.dirty)
+                "
+            >
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        required
+                        minlength="4"
+                        appForbiddenName="bob"
+                        [(ngModel)]="hero.name"
+                        #name="ngModel"
+                        name="name"
+                    />
+
+                    <div
+                        class="alert alert-danger"
+                        *ngIf="name.invalid && (name.dirty || name.touched)"
+                    >
+                        <div *ngIf="name.errors.required">Name is required</div>
+
+                        <div *ngIf="name.errors.minlength">长度不得小于4位</div>
+
+                        <div *ngIf="name.errors.forbiddenName">
+                            Name 不能是 Bob
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="alterEgo">Alter Ego</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="alterEgo"
+                        #alterEgo="ngModel"
+                        [(ngModel)]="hero.alterEgo"
+                        name="alterEgo"
+                        [ngModelOptions]="{ updateOn: 'blur' }"
+                        appUniqueAlterEgo
+                    />
+
+                    <div *ngIf="alterEgo.pending">验证...</div>
+                    <div
+                        *ngIf="alterEgo.invalid"
+                        class="alert alert-danger alert-ego-errors"
+                    >
+                        <div *ngIf="alterEgo.errors?.uniqueAlterEgo">
+                            Alter Ego 已存在
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="cross-validation-error-message alert alert-danger"
+                    *ngIf="
+                        heroForm.errors?.identityRevealed &&
+                        (heroForm.touched || heroForm.dirty)
+                    "
+                >
+                    Name 不能与 alertEgo 相同
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="power">Hero Power</label>
+
+                <select
+                    name="power"
+                    id="power"
+                    class="form-control"
+                    required
+                    [(ngModel)]="hero.power"
+                    #power="ngModel"
+                >
+                    <option *ngFor="let p of powers" [value]="p">
+                        {{ p }}
+                    </option>
+                </select>
+
+                <div
+                    class="alert alert-danger"
+                    *ngIf="power.erroes && power.touched"
+                >
+                    <div *ngIf="power.errors.required">Power is required</div>
+                </div>
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-default"
+                [disabled]="heroForm.invalid"
+            >
+                Submit
+            </button>
+
+            <button
+                class="btn btn-default"
+                type="submit"
+                (click)="heroForm.resetForm({})"
+            >
+                Reset
+            </button>
+        </div>
+
+        <div class="submitted-message" *ngIf="heroForm.submitted">
+            <p>英雄已提交，{{heroForm.value.name}}</p>
+            <button (click)="heroForm.resetForm({})">Add new hero</button>
+        </div>
+    </form>
+</div>

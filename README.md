@@ -36,3 +36,6 @@ heroes教程
 
 # ng-dynamic-form
 动态表单
+
+# ng-providers
+服务提供商

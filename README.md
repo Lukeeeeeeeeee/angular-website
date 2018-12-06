@@ -39,3 +39,6 @@ heroes教程
 
 # ng-providers
 服务提供商
+
+# ng-ngmodules
+单例服务

@@ -42,3 +42,6 @@ heroes教程
 
 # ng-ngmodules
 单例服务
+
+# ng-router-base
+路由器的简单操作

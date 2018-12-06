@@ -45,3 +45,6 @@ heroes教程
 
 # ng-router-base
 路由器的简单操作
+
+# ng-router-sample
+路由器使用样例

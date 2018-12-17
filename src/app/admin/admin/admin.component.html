@@ -1,0 +1,20 @@
+<h3>admin</h3>
+<!--
+    往 Dashboard 这个 routerLink 上添加另一个绑定
+    [routerLinkActiveOptions]="{ exact: true }"， 
+    这样就只有当用户导航到 /admin 这个 URL 时才会激活它，
+    而不会在导航到它的某个子路由时。
+-->
+<nav>
+    <a
+        [routerLink]="['./']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+    >
+        Dashboard
+    </a>
+    <a [routerLink]="['./crises']" routerLinkActive="active">应急管理</a>
+    <a [routerLink]="['./heroes']" routerLinkActive="active">英雄管理</a>
+</nav>
+
+<router-outlet></router-outlet>

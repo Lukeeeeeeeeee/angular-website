@@ -48,3 +48,9 @@ heroes教程
 
 # ng-router-sample
 路由器使用样例
+
+# ng-lazy-loading
+惰性加载的特性模块
+
+# ng-dependency-injection
+依赖注入

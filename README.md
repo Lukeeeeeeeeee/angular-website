@@ -54,3 +54,6 @@ heroes教程
 
 # ng-dependency-injection
 依赖注入
+
+# ng-hierarchical-dependency-injection
+多级依赖注入

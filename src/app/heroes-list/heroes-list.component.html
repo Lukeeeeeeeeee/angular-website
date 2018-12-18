@@ -1,0 +1,14 @@
+<div>
+    <h3>英雄纳税申报表</h3>
+
+    <ul>
+        <li *ngFor="let hero of (heroes | async)" (click)="showTaxReturn(hero)">
+            {{ hero.name }}
+        </li>
+    </ul>
+    <app-hero-tax-return
+        *ngFor="let selected of selectedTaxReturns; let i = index"
+        [taxReturn]="selected"
+        (close)="closeTaxReturn(i)"
+    ></app-hero-tax-return>
+</div>

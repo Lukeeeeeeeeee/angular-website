@@ -5,18 +5,26 @@
     <div>Role: {{userContext.role}}</div>
 </div>
 
-<h1>HeroBase</h1>
-<app-hero-base></app-hero-base>
+<div class="di-component">
+    <h1>HeroBase</h1>
+    <app-hero-base></app-hero-base>
+</div>
 
-<h1>Hero Bios</h1>
-<app-hero-bios></app-hero-bios>
-
-<div appHighlight>
+<div class="di-component">
+    <h1>Hero Bios</h1>
+    <app-hero-bios></app-hero-bios>
+</div>
+<div class="di-component" appHighlight>
     <h1>Hero Bios Contact</h1>
     <div appHighlight='yellow'>
         <app-hero-bios-and-contacts></app-hero-bios-and-contacts>
     </div>
 </div>
 
-<hr>
-<app-storage></app-storage>
+<div class="di-component">
+    <app-storage></app-storage>
+</div>
+
+<div class="di-component">
+    <app-parent-finder></app-parent-finder>
+</div>

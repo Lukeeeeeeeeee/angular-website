@@ -60,3 +60,6 @@ heroes教程
 
 # ng-dependency-injection-practice
 依赖注入实战
+
+# ng-http
+httpClient

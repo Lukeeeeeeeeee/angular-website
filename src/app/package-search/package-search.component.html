@@ -1,0 +1,12 @@
+<h3>搜索 npm 包</h3>
+
+<input type="text" (keyup)="search($event.target.value)" placeholder="search" />
+<input type="checkbox" [checked]="withRefresh" (click)="toggleRefresh()" />
+<label for="withRefresh">with refresh</label>
+
+<ul>
+    <li *ngFor="let package of (packages$ | async)">
+        <b>{{ package.name }} v.{{ package.version }}</b> -
+        <i>{{ package.description }}</i>
+    </li>
+</ul>

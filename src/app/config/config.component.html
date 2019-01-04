@@ -2,6 +2,7 @@
 <div>
     <button (click)="clear(); showConfig()">Get</button>
     <button (click)="clear(); showConfigResponse()">GetResponse</button>
+    <button (click)="clear();">Clear</button>
     <span *ngIf="config">
         <p>英雄 API 地址是："{{ config.heroesUrl }}"</p>
         <p>Textfile 地址是："{{ config.textfile }}"</p>

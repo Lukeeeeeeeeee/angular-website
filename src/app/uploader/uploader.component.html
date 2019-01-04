@@ -1,0 +1,15 @@
+<h3>Upload file</h3>
+<form enctype="multipart/form-data" method="POST">
+    <div>
+        <label for="picked">选择上传文件</label>
+        <div>
+            <input
+                type="file"
+                #picked
+                (click)="message = ''"
+                (change)="onPicked(picked)"
+            />
+        </div>
+    </div>
+    <p *ngIf="message">{{ message }}</p>
+</form>

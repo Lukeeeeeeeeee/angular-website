@@ -7,10 +7,12 @@ import { trigger, transition, style, animate } from '@angular/animations';
     styleUrls: ['./insert-remove.component.css'],
     animations: [
         trigger('myInsertRemoveTrigger', [
+            // 进入
             transition(':enter', [
                 style({opacity: 0}),
                 animate('5s', style({opacity: 1})),
             ]),
+            // 离开
             transition(':leave', [
                 animate('5s', style({opacity: 0})),
             ])
